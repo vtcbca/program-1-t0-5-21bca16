@@ -1,38 +1,49 @@
-/* WAP to create structure
-marksheet (sid,sname,sub1,sub2,sub3,total,per). and print it.*/
+/* WAP to create structure student (sid ,sname) enter 5 student details print
+it using array of structure perform the search based on student name. */
 
 #include<stdio.h>
 #include<conio.h>
 void main()
 {
-	struct marksheet
+	int sid;
+	char sname[30];
+};
+void main()
+{
+	struct student s[3];  //array of struct studente
+	int i,flag=0;
+	char n[30];
+	clrscr();
+	//input 3 student deatails
+	for (i=0;i<3;i++)
 	{
-		int sid ,sub1,sub2,sub3,total,per;
-		char name[30];
-	};
-	struct marksheet m;
+		print("\n Enter student id for student %d:",i+1);
+		scanf("%d",&s[i].sid);
+		print("\n Enter student sname for student %d:",i+1);
+		scanf("%s",s[i].sname);
+	}
+	//print 3 student details
 	clrscr();
-	printf("nEnter student id:");
-	scanf("%d"&m.sid);
-	printf("\nEnter student Name:");
-	scanf("%s",m.sname);
-	printf("\nEnter marks of subject1:");
-	scanf("%d",m.sub1);
-	printf("\nEnter marks of subject2:");
-	scanf("%d",m.sub2);
-	printf("\nEnter marks of subject3:");
-	scanf("%d",m.sub3);
-	m.total=m.sub1+m.sub2+m.sub3,
-	m.per=m.total/3;
-	clrscr();
-	printf("\n\n student ID: %d",m.sid);
-	printf("\n student Name: %s",m.sname);
+	for (i=0;i<3;i++)
 
-printf("\n==================================================================================\n");
-printf("\n c \t\t DBMS \t\t os \t Total\t percentage\n======================================\n");
-printf("%d\t\t%d\t\t%d\t%d\t%d",m.sub1,m.sub2,m.sub3,m.total,m.per);
-printf("\n==================================================================\n");
-	getch():
-}
+printf("\n\n%d\t%s",s[i].sid,s[i].sname);
+
+	//search perch perticular record
+	printf("\n\n\t\tEnter student name which you want to search?:");
+	scanf("%s",n);
+	for(i=0;i<3;i++)  // loop execute for each record
+	{
+	 //if (s[i].name==n)//generate error
+	 if(strcmp (s[i].sname,n)==0)
+	{
+	 printf("\n\n%d \t%s",s[i].sid,s[i]sname);
+	 flag=1;
+	 break;
+       }
+     }
+     if(flag==0)
+       printf("\nStudent record is not available");
+       getch();
+     }
 
 
